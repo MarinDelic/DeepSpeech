@@ -2,8 +2,8 @@
 
 FROM tensorflow/tensorflow:1.15.4-gpu-py3
 ENV DEBIAN_FRONTEND=noninteractive \
-    DEEPSPEECH_REPO=https://github.com/kfurjan/DeepSpeech.git \
-    DEEPSPEECH_SHA=deepspeech-sc
+    DEEPSPEECH_REPO=http://kevin:gitlab01KF.@192.168.209.11/sc22_speech/deepspeech-croatian.git \
+    DEEPSPEECH_SHA=main
 
 RUN rm /etc/apt/sources.list.d/cuda.list
 RUN rm /etc/apt/sources.list.d/nvidia-ml.list
