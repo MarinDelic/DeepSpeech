@@ -3,7 +3,7 @@
 FROM tensorflow/tensorflow:1.15.4-gpu-py3
 ENV DEBIAN_FRONTEND=noninteractive \
     DEEPSPEECH_REPO=https://github.com/MarinDelic/DeepSpeech.git \
-    DEEPSPEECH_SHA=deepspeech-sc22
+    DEEPSPEECH_SHA=deepspeech-sc
 
 RUN rm /etc/apt/sources.list.d/cuda.list
 RUN rm /etc/apt/sources.list.d/nvidia-ml.list
