@@ -2,8 +2,8 @@
 
 FROM tensorflow/tensorflow:1.15.4-gpu-py3
 ENV DEBIAN_FRONTEND=noninteractive \
-    DEEPSPEECH_REPO=#DEEPSPEECH_REPO# \
-    DEEPSPEECH_SHA=#DEEPSPEECH_SHA#
+    DEEPSPEECH_REPO=#https://github.com/MarinDelic/DeepSpeech.git# \
+    DEEPSPEECH_SHA=#deepspeech-sc22#
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
@@ -58,4 +58,5 @@ RUN wget -O - https://gitlab.com/libeigen/eigen/-/archive/3.3.8/eigen-3.3.8.tar.
 
 WORKDIR /DeepSpeech
 
-RUN ./bin/run-ldc93s1.sh
+RUN ["chmod", "+x", "./bin/run-andre.sh"]
+#RUN ./bin/run-ldc93s1.sh
