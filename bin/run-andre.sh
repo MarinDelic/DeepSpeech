@@ -6,15 +6,15 @@ if [ ! -f DeepSpeech.py ]; then
 fi;
 
 if [ ! -f "data/testonesample/testone.csv" ]; then
-    echo "Napravi import file"
+    echo "Napravi import file - TO-DO ako proradi na jednom uzorku baze"
     #python -u bin/import_ldc93s1.py ./data/ldc93s1
 fi;
 
-if [ -d "${COMPUTE_KEEP_DIR}" ]; then
-    checkpoint_dir=$COMPUTE_KEEP_DIR
-else
-    checkpoint_dir=$(python -c 'from xdg import BaseDirectory as xdg; print(xdg.save_data_path("deepspeech/data/testonesample"))')
-fi
+#if [ -d "${COMPUTE_KEEP_DIR}" ]; then
+#    checkpoint_dir=$COMPUTE_KEEP_DIR
+#else
+#    checkpoint_dir=$(python -c 'from xdg import BaseDirectory as xdg; print(xdg.save_data_path("deepspeech/data/testonesample"))')
+#fi
 
 # Force only one visible device because we have a single-sample dataset
 # and when trying to run on multiple devices (like GPUs), this will break
@@ -27,5 +27,5 @@ python -u DeepSpeech.py \
   --test_batch_size 1 \
   --n_hidden 100 \
   --epochs 200 \
-  --checkpoint_dir "$checkpoint_dir" \
-  "$@"
+  #--checkpoint_dir "$checkpoint_dir" \
+  #"$@"
