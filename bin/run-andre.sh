@@ -20,12 +20,13 @@ fi;
 # and when trying to run on multiple devices (like GPUs), this will break
 export CUDA_VISIBLE_DEVICES=0
 
-python -u DeepSpeech.py \
+python -u DeepSpeech.py --noshow_progressbar --noearly_stop \
+  --alphabet_config_path "./data/alphabet.txt" \
   --train_files data/testonesample/testone.csv \
   --test_files data/testonesample/testone.csv \
   --train_batch_size 1 \
   --test_batch_size 1 \
   --n_hidden 100 \
   --epochs 200 \
-  #--checkpoint_dir "$checkpoint_dir" \
-  #"$@"
+  --checkpoint_dir "$checkpoint_dir" \
+  "$@"

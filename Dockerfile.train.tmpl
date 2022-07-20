@@ -61,9 +61,5 @@ RUN wget -O - https://gitlab.com/libeigen/eigen/-/archive/3.3.8/eigen-3.3.8.tar.
 
 WORKDIR /DeepSpeech
 
-#RUN ["chmod", "+x", "./bin/run-andre.sh"]
+RUN ["chmod", "+x", "./bin/run-andre.sh"]
 #RUN ./bin/run-ldc93s1.sh
-#RUN ./bin/run-andre.sh
-RUN chown -R admin:admin /
-RUN chmod 755
-RUN ./bin/run-andre.sh
