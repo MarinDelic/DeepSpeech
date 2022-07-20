@@ -20,7 +20,7 @@ fi
 # and when trying to run on multiple devices (like GPUs), this will break
 export CUDA_VISIBLE_DEVICES=0
 
-python -u DeepSpeech.py --noshow_progressbar --noearly_stop \
+python -u DeepSpeech.py --log_level \
   --alphabet_config_path "./data/alphabet.txt" \
   --train_files data/testonesample/testone.csv \
   --test_files data/testonesample/testone.csv \
