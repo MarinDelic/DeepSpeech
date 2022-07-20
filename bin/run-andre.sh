@@ -10,11 +10,11 @@ if [ ! -f "data/testonesample/testone.csv" ]; then
     #python -u bin/import_ldc93s1.py ./data/ldc93s1
 fi;
 
-#if [ -d "${COMPUTE_KEEP_DIR}" ]; then
-#    checkpoint_dir=$COMPUTE_KEEP_DIR
-#else
-#    checkpoint_dir=$(python -c 'from xdg import BaseDirectory as xdg; print(xdg.save_data_path("deepspeech/data/testonesample"))')
-#fi
+if [ -d "${COMPUTE_KEEP_DIR}" ]; then
+    checkpoint_dir=$COMPUTE_KEEP_DIR
+else
+    checkpoint_dir=$(python -c 'from xdg import BaseDirectory as xdg; print(xdg.save_data_path("deepspeech/data/testonesample"))')
+fi
 
 # Force only one visible device because we have a single-sample dataset
 # and when trying to run on multiple devices (like GPUs), this will break
